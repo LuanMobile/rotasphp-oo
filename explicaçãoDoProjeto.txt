@@ -1,0 +1,41 @@
+PHP Puro com Orientação a Objetos - Um sisteminha de CRUD, com validação de formularios, templates
+
+Mas dando enfâse a Rotas Dinamicas - criando seus filtros de rotas, tanto para rotas simples, quanto para rotas Dinamicas
+- tudo isso na pasta 'core' e as rotas na pasta 'routes
+
+
+Para o banco de dados, foi usado PDO - com a criação de métodos de consultas no banco de dados tal qual frameworks utitliza
+- a parte de Conexão(Connection.php) com o banco e meus metodos de filtros(Filters.php) (filtros de uma consulta sql)
+ficaram na pasta 'database'
+- já os metodos de consultas no banco ficaram na pasta 'database/models' e seguindo o principio solid
+'single responsability' criei um arquivo 'Model.php' para armazenar todos os metodos de consultas
+
+Criando Paginação - arquivo 'Pagination.php' na pasta 'database
+- seto os filtros de paginação no 'Pagination.php'
+- faço uso de links de paginação utilizando o bootstrap
+
+[ -é um tipo de exploit malicioso de um website, no qual comandos não autorizados são transmitidos a partir de um usuário -]
+Proteção de formularios contra a CSRF (cross-site request forgery),
+em português falsificação de solicitação entre sites.
+- toda vez em que for atualizar o formulario é gerado um token novo - justamente para evitar o CSRF
+- faço validação do token e caso o token não seja valido é gerado uma excessão
+
+
+// autoload do projeto no composer.json
+- para funções simples de ajuda ao desenvolvimento do meu projeto,
+os arquivos ficam na pasta 'helpers'
+- logo, para utilização dessas funções preciso colocar esses arquivos lá no
+autoload no campo "files:[]"
+- e para gerar meus arquilos de autoload, rodo o comando 'composer du'
+- qualquer coisa que seja alterada no composer.json, depois roda esse comando
+
+Validação de formulario - no arquivo 'Validate.php' que está na pasta 'support'
+- crio os metodos de validação fazendo o uso de traits, no arquivo 'Validations.php' que está na pasta 'traits'
+- crio a logica para validação de uma só regra e quando se tem mais de uma
+- depois adiciono nos métodos as chamdas das flash messages
+- abstrair o metodo 'validate' do 'Validate.php'
+
+Envio de Emails
+- para usar metodos encadeados, o chamado 'Fluent Interface', onde um metodo chama outro.
+- cade um desse metodos tem que retornar o próprio objeto
+- nesse caso, cada metodo deve retornar o objeto/classe 'Email'.
