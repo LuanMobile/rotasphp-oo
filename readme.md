@@ -7,3 +7,4 @@
 - var-dumper
 - phpmailer
 - phpdotenv
+- PDO
